@@ -1,0 +1,20 @@
+{
+  "name": "reactWheel",
+  "version": "1.0.0",
+  "description": "运用react创建的UI组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zkjaisq/reactWheel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zkjaisq/reactWheel/issues"
+  },
+  "homepage": "https://github.com/zkjaisq/reactWheel#readme"
+}
