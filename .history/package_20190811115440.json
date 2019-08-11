@@ -17,7 +17,7 @@
     "url": "https://github.com/zkjaisq/reactWheel/issues"
   },
   "homepage": "https://github.com/zkjaisq/reactWheel#readme",
-
+   开发者依赖
   "devDependencies": {
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
