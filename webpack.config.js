@@ -8,6 +8,10 @@ module.exports= {
     entry:{
         index:'./lib/index.tsx'
     },
+// 配置模块如何解析
+    resolve:{
+        extensions: ['.ts', '.tsx', '.js', '.jsx']  
+    },
     // 
     module: {
         // 将jsx文件解析
