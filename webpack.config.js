@@ -1,5 +1,7 @@
 // webpack的格式
 const path = require('path');
+// html-webpack-plugin是一个改写html的插件
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports= {
     mode:'production',
     // r入口文件entry
@@ -23,5 +25,11 @@ module.exports= {
         path:path.resolve(__dirname,'dist/lib'),       
         library:"reactWheel",//导出的目录
         libraryTarget:'umd'//导出的文件的格式
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'index.html'
+        })
+    ]
+
 }
