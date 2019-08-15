@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"webpack-dev-server",
-    "build":"webpack"
+    "start": "webpack-dev-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/zkjaisq/reactWheel#readme",
   "devDependencies": {
+    "@types/react": "^16.9.1",
     "awesome-typescript-loader": "^5.2.1",
     "html-webpack-plugin": "^3.2.0",
     "typescript": "^3.5.3",
@@ -29,6 +30,7 @@
   },
   "dependencies": {
     "@types/jquery": "^3.3.31",
+    "@types/react-dom": "^16.8.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }
