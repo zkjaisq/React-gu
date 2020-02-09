@@ -4,14 +4,14 @@ module.exports = {
   verbose: true,
   clearMocks: false,
   //是否收集test的
-  collectCoverage: true,
+  collectCoverage: false,
   //jest-junit  是一个测试的分析报告 。
   reporters: ["default","jest-junit"],
 
-  //测试覆盖率的配置
-  collectCoverageFrom: ["lib/**/*.{ts,tsx}", "!**/node_modules/**"],
-  coverageDirectory: 'coverage',
-  coverageReporters: ['text', 'lcov'],
+  // //测试覆盖率的配置
+  // collectCoverageFrom: ["lib/**/*.{ts,tsx}", "!**/node_modules/**"],
+  // coverageDirectory: 'coverage',
+  // coverageReporters: ['text', 'lcov'],
 
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
   moduleDirectories: ['node_modules'],

@@ -4295,8 +4295,8 @@ jest-jasmine2@^24.3.1:
 
 jest-junit@^10.0.0:
   version "10.0.0"
-  resolved "https://registry.npm.taobao.org/jest-junit/download/jest-junit-10.0.0.tgz#c94b91c24920a327c9d2a075e897b2dba4af494b"
-  integrity sha1-yUuRwkkgoyfJ0qB16Jey26SvSUs=
+  resolved "https://registry.npmjs.org/jest-junit/-/jest-junit-10.0.0.tgz#c94b91c24920a327c9d2a075e897b2dba4af494b"
+  integrity sha512-dbOVRyxHprdSpwSAR9/YshLwmnwf+RSl5hf0kCGlhAcEeZY9aRqo4oNmaT0tLC16Zy9D0zekDjWkjHGjXlglaQ==
   dependencies:
     jest-validate "^24.9.0"
     mkdirp "^0.5.1"
