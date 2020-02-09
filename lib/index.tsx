@@ -1,15 +1,4 @@
-import Icon from './icon/icon';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+export  {default as Icon} from './icon/icon';
 
-const  fn :React.MouseEventHandler = (e)=> {
-    console.log(e.target);
-}
 
-ReactDOM.render(
-    <div>
-        <Icon name='wechat' className="111" onClick={fn}/>
-        <Icon name='ali' onClick={fn}/>
-        <Icon name='qq' onClick={fn}/>
-    </div>
-   ,document.body.querySelector('#root'))
+
