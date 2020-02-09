@@ -2,3 +2,5 @@ node_modules
 .history
 .idea
 /dist/*
+/test-results/
+coverage
