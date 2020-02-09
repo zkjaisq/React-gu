@@ -1,6 +1,6 @@
 {
-  "name": "MOUI",
-  "version": "0.0.3",
+  "name": "jjui",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/lib/index",
   "types": "dist/lib/index",
