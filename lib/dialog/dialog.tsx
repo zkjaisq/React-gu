@@ -1,4 +1,4 @@
-import React, {Fragment, ReactElement, ReactFragment, ReactNode} from 'react';
+import React, {Fragment, ReactElement, ReactNode} from 'react';
 import ReactDOM from   'react-dom'
 import {Icon} from '../index';
 
@@ -43,14 +43,17 @@ const Dialog:React.FunctionComponent<propsDialog> = (props)=>{
                 <main className={scopeClass('main')}>
                     {props.children}
                 </main>
-                <footer className={scopeClass('footer')}>
-                    {
-                       props.buttons &&  props.buttons.map((button, index) =>
-                            React.cloneElement(button, {key: index})
-                        )
-                    }
+                {props.buttons && props.buttons.length > 0 &&
+                    <footer className={scopeClass('footer')}>
+                        {
+                            props.buttons &&  props.buttons.map((button, index) =>
+                                React.cloneElement(button, {key: index})
+                            )
+                        }
 
-                </footer>
+                    </footer>
+                }
+
 
             </div>
         </Fragment>
@@ -61,63 +64,46 @@ const Dialog:React.FunctionComponent<propsDialog> = (props)=>{
     )
 }
 
-const  alert = (content:string)=>{
-    const component = <Dialog visible={true} buttons={
-        [
-            <button>1</button>,
-            <button>2</button>
-        ]
-    } onClose={()=>{
-        ReactDOM.render(React.cloneElement(component,{visible:false}),div);
-        ReactDOM.unmountComponentAtNode(div)
-        div.remove()
-    }}>{content}</Dialog>
-    const div = document.createElement('div')
-    ReactDOM.render(component,div)
-}
 
-
-const confirm = (content:string,success?:()=>void,fail?:()=>void)=>{
-    const  onYes = ()=>{
-        ReactDOM.render(React.cloneElement(component,{visible:false}),div)
-        ReactDOM.unmountComponentAtNode(div)
-        div.remove()
-        success &&  success()
-    }
-    const onNo = ()=>{
-        ReactDOM.render(React.cloneElement(component,{visible:false}),div)
-        ReactDOM.unmountComponentAtNode(div)
-        div.remove()
-        fail && fail()
-    }
-    const component = (
-        <Dialog visible={true}
-                onClose={()=>{
-                    ReactDOM.render(React.cloneElement(component,{visible:false}),div)
-                    ReactDOM.unmountComponentAtNode(div)
-                    div.remove()
-                }}
-                buttons ={[
-                    <button onClick={onYes}>yes</button>,
-                    <button onClick={onNo}> no</button>
-                ]}
-    ></Dialog>)
-    const div = document.createElement('div')
-    ReactDOM.render(component,div)
-}
-
-const modal = (content:ReactNode | ReactFragment)=>{
+const  modal= (content:ReactNode ,buttons?:Array<ReactElement>)=>{
     const close = ()=>{
         ReactDOM.render(React.cloneElement(component,{visible:false}),div);
         ReactDOM.unmountComponentAtNode(div)
         div.remove()
     }
-    const component = <Dialog visible={true}
-    onClose={close}>{content}</Dialog>
+    const component = <Dialog
+        visible={true}
+        onClose={close}
+    >{content}</Dialog>
     const div = document.createElement('div')
     ReactDOM.render(component,div)
     return close
 }
+
+const  alert = (content:string)=>{
+    const button = [<button onClick={()=>onClose}>yes</button>] 
+    const onClose  = modal(content,button)
+}
+
+
+const confirm = (content:string,success?:()=>void,fail?:()=>void)=>{
+    const  onYes = ()=>{
+        onClose()
+        success &&  success()
+    }
+    const onNo = ()=>{
+        onClose()
+        fail && fail()
+    }
+    const buttons = [
+        <button onClick={onYes}>yes</button>,
+        <button onClick={onNo}> no</button>
+    ]
+    const onClose = modal(content,buttons)
+
+
+}
+
 export {alert,confirm,modal}
 
 export default Dialog
