@@ -73,6 +73,7 @@ const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: (
     };
     const component = <Dialog
         visible={true}
+        buttons={buttons}
         onClose={() => {
             close();
             afterClose && afterClose();
@@ -84,7 +85,7 @@ const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: (
 };
 
 const alert = (content: string) => {
-    const button = [<button onClick={() => close}>yes</button>];
+    const button = [<button onClick={() => close()}>yes</button>];
     const close = modal(content, button);
 };
 
